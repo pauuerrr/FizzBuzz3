@@ -9,6 +9,7 @@ namespace FizzBuzz3.Models
     public class FizzBuzz
     {
         [Display(Name = "Podana liczba")]
+        [StringLength(4,MinimumLength = 1),Required(ErrorMessage = "Pole jesy obowiazkowe")]
         public int Number { get; set; }
         public string result { get; set; }
 

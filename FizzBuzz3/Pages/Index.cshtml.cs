@@ -12,6 +12,7 @@ namespace FizzBuzz3.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
+        [BindProperty]
         public FizzBuzz FizzBuzz { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -22,6 +23,15 @@ namespace FizzBuzz3.Pages
         public void OnGet()
         {
 
+        }
+
+        public IActionResult OnPost()
+        {
+            if(ModelState.IsValid)
+            {
+                FizzBuzz.FizzBuzzWyswietl();
+            }
+            return Page();
         }
     }
 }
