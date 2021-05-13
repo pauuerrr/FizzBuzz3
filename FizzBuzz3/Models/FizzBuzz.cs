@@ -13,6 +13,12 @@ namespace FizzBuzz3.Models
         public int Number { get; set; }
         public static int Number_2 { get; set; }
         public static string result { get; set; }
+        public DateTime data { get; set; }
+
+        public void Datapobierz(DateTime data)
+        {
+            this.data = data;
+        }
 
 
         public void FizzBuzzWyswietl()
