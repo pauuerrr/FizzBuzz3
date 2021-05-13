@@ -36,7 +36,7 @@ namespace FizzBuzz3.Models
             }
             else
             {
-                result = "Podana liczba nie spelnia kryteriow FizzBuzz";
+                result = "Blad.Podana liczba nie znajduje sie w zakresie";
             }
         }
     }
