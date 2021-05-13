@@ -33,6 +33,9 @@ namespace FizzBuzz3.Pages
             if(ModelState.IsValid)
             {
                 FizzBuzz.FizzBuzzWyswietl();
+                FizzBuzz.Datapobierz(DateTime.Now);
+                HttpContext.Session.SetString("FizzBuzz", JsonConvert.SerializeObject(FizzBuzz));
+                return RedirectToPage("./FizzBuzzList");
             }
             return Page();
         }
