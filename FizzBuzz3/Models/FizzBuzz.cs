@@ -11,11 +11,13 @@ namespace FizzBuzz3.Models
         [Display(Name = "Podana liczba")]
         [Required(ErrorMessage = "Pole jest obowiazkowe")]
         public int Number { get; set; }
+        public static int Number_2 { get; set; }
         public static string result { get; set; }
 
 
         public void FizzBuzzWyswietl()
         {
+            Number_2 = Number;
             if(Number >= 1 && Number <= 1000)
             {
                 result = "";
@@ -29,7 +31,7 @@ namespace FizzBuzz3.Models
                 }
                 if(Number%3 != 0 && Number%5 != 0)
                 {
-                    result = "Podana liczba nie spelnia kryteriow FizzBuzz";
+                    result = "Liczba : " + Number_2 + " nie spelnia kryteriow Fizz/Buzz";
                 }
             }
             else

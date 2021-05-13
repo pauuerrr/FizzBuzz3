@@ -10,6 +10,7 @@
     <form method="post">
         <label asp-for="FizzBuzz.Number"></label>
         <input asp-for="FizzBuzz.Number" /><br />
+        <button type="submit">Zatwierdź</button>
     </form>
 
     @if (Models.FizzBuzz.result == "Fizz")
@@ -24,9 +25,9 @@
     {
         <h1 class="display-4">Otrzymano: FizzBuzz</h1>
     }
-    else if(Models.FizzBuzz.result == "Podana liczba nie spelnia kryteriow FizzBuzz")
+    else if(Models.FizzBuzz.result == "Liczba : " + Models.FizzBuzz.Number_2 + " nie spelnia kryteriow Fizz/Buzz")
     {
-        <h1 class="display-4">Podana liczba nie spelnia kryteriow FizzBuzz</h1>
+        <h1 class="display-4">Liczba @Models.FizzBuzz.Number_2 nie spelnia kryteriow Fizz/Buzz </h1>
     }
 
 
