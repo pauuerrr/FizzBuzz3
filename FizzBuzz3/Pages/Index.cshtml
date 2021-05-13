@@ -12,4 +12,22 @@
         <input asp-for="FizzBuzz.Number" /><br />
     </form>
 
+    @if (Models.FizzBuzz.result == "Fizz")
+    {
+        <h1 class="display-4">Otrzymano: Fizz</h1>
+    }
+    else if (Models.FizzBuzz.result == "Buzz")
+    { 
+        <h1 class="display-4">Otrzymano: Buzz</h1>    
+    }
+    else if (Models.FizzBuzz.result == "FizzBuzz")
+    {
+        <h1 class="display-4">Otrzymano: FizzBuzz</h1>
+    }
+    else if(Models.FizzBuzz.result == "Podana liczba nie spelnia kryteriow FizzBuzz")
+    {
+        <h1 class="display-4">Podana liczba nie spelnia kryteriow FizzBuzz</h1>
+    }
+
+
 </div>

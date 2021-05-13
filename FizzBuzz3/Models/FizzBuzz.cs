@@ -9,14 +9,16 @@ namespace FizzBuzz3.Models
     public class FizzBuzz
     {
         [Display(Name = "Podana liczba")]
-        [StringLength(4,MinimumLength = 1),Required(ErrorMessage = "Pole jesy obowiazkowe")]
+        [Required(ErrorMessage = "Pole jest obowiazkowe")]
         public int Number { get; set; }
-        public string result { get; set; }
+        public static string result { get; set; }
+
 
         public void FizzBuzzWyswietl()
         {
             if(Number >= 1 && Number <= 1000)
             {
+                result = "";
                 if(Number%3==0)
                 {
                     result += "Fizz";
@@ -25,10 +27,14 @@ namespace FizzBuzz3.Models
                 {
                     result += "Buzz";
                 }
-                else
+                if(Number%3 != 0 && Number%5 != 0)
                 {
                     result = "Podana liczba nie spelnia kryteriow FizzBuzz";
                 }
+            }
+            else
+            {
+                result = "Podana liczba nie spelnia kryteriow FizzBuzz";
             }
         }
     }
