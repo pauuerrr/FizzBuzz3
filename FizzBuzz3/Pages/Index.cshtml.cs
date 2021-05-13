@@ -8,6 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+
 
 
 namespace FizzBuzz3.Pages
@@ -25,7 +28,11 @@ namespace FizzBuzz3.Pages
 
         public void OnGet()
         {
-
+            var SessionFizzBuzz = HttpContext.Session.GetString("SessionFizzBuzz");
+            if(SessionFizzBuzz !=null)
+            {
+                FizzBuzz = JsonConvert.DeserializeObject<FizzBuzz>(SessionFizzBuzz);
+            }
         }
 
         public IActionResult OnPost()
