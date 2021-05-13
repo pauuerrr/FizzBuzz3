@@ -8,8 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Http;
-using Newtonsoft.Json;
+
 
 
 
@@ -19,7 +18,7 @@ namespace FizzBuzz3.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         [BindProperty]
-        public FizzBuzz FizzBuzz { get; set; }
+        public FizzBuzz FizzBz { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -28,20 +27,16 @@ namespace FizzBuzz3.Pages
 
         public void OnGet()
         {
-            var SessionFizzBuzz = HttpContext.Session.GetString("SessionFizzBuzz");
-            if(SessionFizzBuzz !=null)
-            {
-                FizzBuzz = JsonConvert.DeserializeObject<FizzBuzz>(SessionFizzBuzz);
-            }
+            
         }
 
         public IActionResult OnPost()
         {
             if(ModelState.IsValid)
             {
-                FizzBuzz.FizzBuzzWyswietl();
-                FizzBuzz.Datapobierz(DateTime.Now);
-                HttpContext.Session.SetString("FizzBuzz", JsonConvert.SerializeObject(FizzBuzz));
+                FizzBz.FizzBuzzWyswietl();
+                FizzBz.Datapobierz(DateTime.Now);
+                HttpContext.Session.SetString("SessionFizzBuzz", JsonConvert.SerializeObject(FizzBz));
                 return RedirectToPage("./FizzBuzzList");
             }
             return Page();
