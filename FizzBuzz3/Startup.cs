@@ -24,7 +24,7 @@ namespace FizzBuzz3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-            services.AddDistributedMemoryCache();
+            services.AddMemoryCache();
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromSeconds(180);

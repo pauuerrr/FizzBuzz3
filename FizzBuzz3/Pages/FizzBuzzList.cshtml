@@ -1,4 +1,16 @@
 ﻿@page
 @model FizzBuzz3.Pages.FizzBuzzListModel
 @{
+    ViewData["Title"] = "Lista";
 }
+
+<p>Dane zapisane w sesji</p>
+
+@if(Model.FizzBz != null) { 
+          
+<p> @Html.DisplayNameFor(model => Model.FizzBz.Number): @Model.FizzBz.Number </p>
+<p> @Html.DisplayNameFor(model => Model.FizzBz.result_2): @Model.FizzBz.result_2 </p>
+<p> @Html.DisplayNameFor(model => Model.FizzBz.data): @Model.FizzBz.data </p>
+
+
+    }
