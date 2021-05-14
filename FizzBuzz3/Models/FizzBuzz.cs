@@ -13,6 +13,7 @@ namespace FizzBuzz3.Models
         public int Number { get; set; }
         public static int Number_2 { get; set; }
         public static string result { get; set; }
+        [Display(Name = "Result: ")]
         public string result_2 { get; set; }
         public DateTime data { get; set; }
 

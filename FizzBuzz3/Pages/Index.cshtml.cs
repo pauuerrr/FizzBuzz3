@@ -37,7 +37,7 @@ namespace FizzBuzz3.Pages
                 FizzBz.FizzBuzzWyswietl();
                 FizzBz.Datapobierz(DateTime.Now);
                 HttpContext.Session.SetString("SessionFizzBuzz", JsonConvert.SerializeObject(FizzBz));
-                return RedirectToPage("./FizzBuzzList");
+                //return RedirectToPage("./FizzBuzzList");
             }
             return Page();
         }
