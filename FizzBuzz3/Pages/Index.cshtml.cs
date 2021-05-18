@@ -16,7 +16,7 @@ namespace FizzBuzz3.Pages
     {
         private readonly ILogger<IndexModel> _logger;
         private readonly FizzBuzzContext _context;
-        public IList<FizzBuzz> Fizzbuzzes { get; set; }
+        
         [BindProperty]
         public FizzBuzz FizzBz { get; set; }
 
@@ -28,7 +28,7 @@ namespace FizzBuzz3.Pages
 
         public void OnGet()
         {
-            Fizzbuzzes = _context.FizzBuzz.ToList(); 
+            
         }
 
         public IActionResult OnPost()

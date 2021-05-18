@@ -33,7 +33,7 @@ namespace FizzBuzz3
             services.AddMemoryCache();
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromSeconds(180);
+                options.IdleTimeout = TimeSpan.FromSeconds(600);
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
             });

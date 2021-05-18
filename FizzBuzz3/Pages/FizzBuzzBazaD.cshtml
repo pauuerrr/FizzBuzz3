@@ -1,4 +1,14 @@
 ﻿@page
 @model FizzBuzz3.Pages.FizzBuzzBazaDModel
 @{
+    ViewData["Title"] = "Baza Danych";
+}
+
+@foreach (var item in Model.Fizzbuzzes)
+{
+    <tr>
+    <td>@Html.DisplayFor(modelItem => item.Number)</td>
+    <td>@Html.DisplayFor(modelItem => item.result_2)</td>>
+    <td>@Html.DisplayFor(modelItem => item.data)</td>>
+</tr>
 }
