@@ -16,6 +16,7 @@ namespace FizzBuzz3.Models
         [Display(Name = "Result: ")]
         public string result_2 { get; set; }
         public DateTime data { get; set; }
+        public int Id { get; set; }
 
         public void Datapobierz(DateTime data)
         {
